@@ -34,12 +34,69 @@ body {
 }
 
 .header h1 {
-  margin: 0;
+  margin: 0 0 1rem 0;
   font-size: 2.5rem;
   font-weight: 700;
   background: linear-gradient(45deg, var(--primary-color), #6366f1);
   -webkit-background-clip: text;
+  background-clip: text;
   color: transparent;
+}
+
+.nav-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 1.5rem;
+}
+
+.action-button {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.action-button .material-symbols-outlined {
+  font-size: 1.2rem;
+}
+
+.kinsakusaba-button {
+  background: linear-gradient(45deg, #ffd700, #ff9500);
+  color: #000;
+  box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
+}
+
+.kinsakusaba-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255, 215, 0, 0.4);
+}
+
+.contact-button {
+  background: linear-gradient(45deg, var(--primary-color), #6366f1);
+  color: white;
+  box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3);
+}
+
+.contact-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(99, 102, 241, 0.4);
+}
+
+@media (max-width: 600px) {
+  .nav-buttons {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .action-button {
+    justify-content: center;
+  }
 }
 
 .container {

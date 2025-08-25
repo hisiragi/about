@@ -2,20 +2,7 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <m        <div class="subtle-buttons">
-          <a href="/kinsakusaba/" class="subtle-button">
-            <span class="material-symbols-outlined">currency_yen</span>
-            金策鯖
-          </a>
-          <a href="/contact/" class="subtle-button">
-            <span class="material-symbols-outlined">mail</span>
-            Contact
-          </a>
-        </div>
-      </div>
-    </section>
-  </main>
-</body> name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>hisiragi | About</title>
   <link rel="icon" media="(prefers-color-scheme: light)" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23000000' d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z'/%3E%3C/svg%3E">
   <link rel="icon" media="(prefers-color-scheme: dark)" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23FFFFFF' d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z'/%3E%3C/svg%3E">
@@ -32,55 +19,57 @@
   </header>
 
   <main class="container">
-    <section class="profile-section">
-      <h2>プロフィール</h2>
-      <p>
-        金策鯖というDiscordコミュニティで活動しているWeb開発者です。
-        HTML、CSS、JavaScript、Python、WordPressなど、幅広い技術を学習しています。
-      </p>
-    </section>
-
-    <section class="skills-section">
-      <h2>開発スキル</h2>
-      <div class="skills-list">
-        <span class="skill-tag">HTML/CSS</span>
-        <span class="skill-tag">JavaScript</span>
-        <span class="skill-tag">Python</span>
-        <span class="skill-tag">WordPress</span>
+    <div class="card profile-card">
+      <div class="card-content">
+        <h2>プロフィール</h2>
+        <p>
+          金策鯖というDiscordコミュニティで活動しているWeb開発者です。
+          HTML、CSS、JavaScript、Python、WordPressなど、幅広い技術を学習しています。
+        </p>
       </div>
-    </section>
+    </div>
 
-    <section class="links-section">
-      <h2>SNS</h2>
-      <div class="social-links">
-        <a href="https://youtube.com/@hiiragi" class="social-link" target="_blank" rel="noopener">
-          <span class="material-symbols-outlined">play_circle</span>
-          YouTube
-        </a>
-        <a href="https://x.com/hisiragi_jp" class="social-link" target="_blank" rel="noopener">
-          <span class="material-symbols-outlined">tag</span>
-          X (Twitter)
-        </a>
-        <a href="https://tiktok.com/@hisiragi" class="social-link" target="_blank" rel="noopener">
-          <span class="material-symbols-outlined">music_note</span>
-          TikTok
-        </a>
+    <div class="card skills-card">
+      <div class="card-content">
+        <h2>開発スキル</h2>
+        <div class="chip-container">
+          <span class="chip">HTML/CSS</span>
+          <span class="chip">JavaScript</span>
+          <span class="chip">Python</span>
+          <span class="chip">WordPress</span>
+        </div>
       </div>
+    </div>
 
-      <div class="action-links">
-      <a href="https://youtube.com/@hisiragi" class="social-link" target="_blank" rel="noopener">
-        <span class="material-symbols-outlined">play_circle</span>
-        YouTube
+    <div class="card social-card">
+      <div class="card-content">
+        <div class="social-links">
+          <a href="https://youtube.com/@hiiragi" class="social-link" target="_blank" rel="noopener">
+            <span class="material-symbols-outlined">play_circle</span>
+            <span>YouTube</span>
+          </a>
+          <a href="https://x.com/hisiragi_jp" class="social-link" target="_blank" rel="noopener">
+            <span class="material-symbols-outlined">tag</span>
+            <span>X (Twitter)</span>
+          </a>
+          <a href="https://tiktok.com/@hisiragi" class="social-link" target="_blank" rel="noopener">
+            <span class="material-symbols-outlined">music_note</span>
+            <span>TikTok</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="bottom-actions">
+      <a href="/kinsakusaba/" class="fab-button">
+        <span class="material-symbols-outlined">currency_yen</span>
+        <span>金策鯖</span>
       </a>
-      <a href="https://x.com/hisiragi_jp" class="social-link" target="_blank" rel="noopener">
-        <span class="material-symbols-outlined">tag</span>
-        X (Twitter)
+      <a href="/contact/" class="fab-button">
+        <span class="material-symbols-outlined">mail</span>
+        <span>Contact</span>
       </a>
-      <a href="https://tiktok.com/@hisiragi" class="social-link" target="_blank" rel="noopener">
-        <span class="material-symbols-outlined">music_note</span>
-        TikTok
-      </a>
-    </section>
+    </div>
   </main>
 </body>
 </html>

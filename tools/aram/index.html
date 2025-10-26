@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>アラーム|hisiragi</title>
+    <link rel="icon" media="(prefers-color-scheme: light)" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23000000' d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z'/%3E%3C/svg%3E">
+    <link rel="icon" media="(prefers-color-scheme: dark)" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23FFFFFF' d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z'/%3E%3C/svg%3E">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <div class="tab-bar">
+            <button class="tab-button active" data-tab="worldclock">
+                <span class="material-icons">public</span>
+                世界時計
+            </button>
+            <button class="tab-button" data-tab="alarm">
+                <span class="material-icons">alarm</span>
+                アラーム
+            </button>
+            <button class="tab-button" data-tab="stopwatch">
+                <span class="material-icons">timer</span>
+                ストップウォッチ
+            </button>
+            <button class="tab-button" data-tab="timer">
+                <span class="material-icons">hourglass_empty</span>
+                タイマー
+            </button>
+        </div>
+
+        <div class="content">
+            <!-- 世界時計タブ -->
+            <div class="tab-content active" id="worldclock">
+                <div class="search-container">
+                    <input type="text" id="citySearch" placeholder="都市を検索">
+                    <button id="addCityButton" class="add-button">
+                        <span class="material-icons">add</span>
+                    </button>
+                </div>
+                <div id="worldClockList" class="world-clock-list"></div>
+            </div>
+
+            <!-- アラームタブ -->
+            <div class="tab-content" id="alarm">
+                <div class="alarm-header">
+                    <button id="addAlarmButton" class="add-button">
+                        <span class="material-icons">add</span>
+                    </button>
+                </div>
+                <div id="alarmList" class="alarm-list"></div>
+            </div>
+
+            <!-- ストップウォッチタブ -->
+            <div class="tab-content" id="stopwatch">
+                <div class="stopwatch-display">
+                    <div class="time">00:00.00</div>
+                    <div class="lap-times"></div>
+                </div>
+                <div class="stopwatch-controls">
+                    <button class="control-button reset-button">リセット</button>
+                    <button class="control-button start-button">開始</button>
+                    <button class="control-button lap-button">ラップ</button>
+                </div>
+            </div>
+
+            <!-- タイマータブ -->
+            <div class="tab-content" id="timer">
+                <div class="timer-display">
+                    <div class="time-picker">
+                        <div class="picker-section">
+                            <input type="number" class="time-input hours" min="0" max="23" value="0">
+                            <span class="time-label">時間</span>
+                        </div>
+                        <div class="picker-section">
+                            <input type="number" class="time-input minutes" min="0" max="59" value="0">
+                            <span class="time-label">分</span>
+                        </div>
+                        <div class="picker-section">
+                            <input type="number" class="time-input seconds" min="0" max="59" value="0">
+                            <span class="time-label">秒</span>
+                        </div>
+                    </div>
+                    <div class="timer-remaining">00:00:00</div>
+                </div>
+                <div class="timer-controls">
+                    <button class="control-button cancel-button">キャンセル</button>
+                    <button class="control-button start-button">開始</button>
+                    <button class="control-button pause-button">一時停止</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- アラーム設定モーダル -->
+    <div class="modal" id="alarmModal">
+        <div class="modal-content">
+            <h2>アラームを追加</h2>
+            <div class="time-picker">
+                <input type="time" id="alarmTime">
+            </div>
+            <div class="alarm-options">
+                <div class="repeat-days">
+                    <label>繰り返し</label>
+                    <div class="day-buttons">
+                        <button data-day="0">日</button>
+                        <button data-day="1">月</button>
+                        <button data-day="2">火</button>
+                        <button data-day="3">水</button>
+                        <button data-day="4">木</button>
+                        <button data-day="5">金</button>
+                        <button data-day="6">土</button>
+                    </div>
+                </div>
+                <div class="sound-selection">
+                    <label>サウンド</label>
+                    <select id="alarmSound"></select>
+                    <input type="file" id="customSound" accept="audio/*" multiple>
+                    <label for="customSound" class="custom-sound-button">カスタムサウンドを追加</label>
+                </div>
+                <div class="snooze-option">
+                    <label>
+                        <input type="checkbox" id="snoozeEnabled" checked>
+                        スヌーズ
+                    </label>
+                </div>
+            </div>
+            <div class="modal-buttons">
+                <button class="cancel-button">キャンセル</button>
+                <button class="save-button">保存</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 都市選択モーダル -->
+    <div class="modal" id="cityModal">
+        <div class="modal-content">
+            <div class="search-container">
+                <input type="text" id="cityModalSearch" placeholder="都市を検索">
+            </div>
+            <div class="city-list" id="cityModalList"></div>
+            <div class="modal-buttons">
+                <button class="cancel-button">キャンセル</button>
+            </div>
+        </div>
+    </div>
+
+    <audio id="alarmAudio" loop></audio>
+    <script src="cities.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

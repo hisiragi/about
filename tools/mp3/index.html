@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mp3プレイヤー|hisiragi</title>
+    <link rel="icon" media="(prefers-color-scheme: light)" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23000000' d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z'/%3E%3C/svg%3E">
+    <link rel="icon" media="(prefers-color-scheme: dark)" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23FFFFFF' d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z'/%3E%3C/svg%3E">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="player-container">
+        <div class="upload-area" id="uploadArea">
+            <input type="file" id="fileInput" accept="audio/*" multiple hidden>
+            <label for="fileInput" class="upload-button">
+                <span class="material-icons">upload_file</span>
+                <span>ファイルをアップロード</span>
+            </label>
+        </div>
+
+        <div class="playlist" id="playlist">
+            <!-- プレイリストアイテムがここに追加されます -->
+        </div>
+
+        <div class="player-controls">
+            <div class="song-info">
+                <div class="song-title" id="currentTitle">曲が選択されていません</div>
+            </div>
+            
+            <div class="progress-bar">
+                <div class="progress" id="progress"></div>
+                <input type="range" id="seekBar" value="0" step="0.1">
+            </div>
+            
+            <div class="time-info">
+                <span id="currentTime">0:00</span>
+                <span id="duration">0:00</span>
+            </div>
+
+            <div class="main-controls">
+                <button id="prevButton" class="control-button">
+                    <span class="material-icons">skip_previous</span>
+                </button>
+                <button id="playButton" class="control-button">
+                    <span class="material-icons">play_arrow</span>
+                </button>
+                <button id="nextButton" class="control-button">
+                    <span class="material-icons">skip_next</span>
+                </button>
+            </div>
+
+            <div class="secondary-controls">
+                <div class="volume-control">
+                    <span class="material-icons">volume_up</span>
+                    <input type="range" id="volumeControl" min="0" max="100" value="100">
+                </div>
+                <button id="loopButton" class="control-button">
+                    <span class="material-icons">repeat</span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

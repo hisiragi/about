@@ -12,6 +12,13 @@ class TimerApp {
         this.timers = new Map();
         this.customSounds = [];
         
+        // デフォルトのアラーム音を設定
+        this.defaultSounds = [
+            { name: "デフォルト", file: "default" },
+            { name: "ビープ音", file: "beep" },
+            { name: "鐘の音", file: "bell" }
+        ];
+        
         // ストップウォッチ関連
         this.stopwatchRunning = false;
         this.stopwatchStartTime = 0;
@@ -89,6 +96,23 @@ class TimerApp {
     showTimerModal() {
         this.timerModal.style.display = 'block';
         Object.values(this.timerInputs).forEach(input => input.value = '0');
+        
+        // サウンド選択リストの初期化
+        this.timerSound.innerHTML = '';
+        // デフォルトサウンドの追加
+        this.defaultSounds.forEach((sound, index) => {
+            const option = document.createElement('option');
+            option.value = 'default-' + sound.file;
+            option.textContent = sound.name;
+            this.timerSound.appendChild(option);
+        });
+        // カスタムサウンドの追加
+        this.customSounds.forEach((sound, index) => {
+            const option = document.createElement('option');
+            option.value = 'custom-' + index;
+            option.textContent = sound.name;
+            this.timerSound.appendChild(option);
+        });
     }
 
     hideTimerModal() {
@@ -217,18 +241,70 @@ class TimerApp {
 
     timerComplete(timer) {
         timer.remaining = 0;
+        timer.completed = true;
         this.updateTimerDisplay(timer);
         this.playTimerSound(timer.soundIndex);
         this.showNotification('タイマー終了', '設定した時間が経過しました');
-        this.removeTimer(timer.id);
+        
+        // 完了時のUIを更新
+        const element = timer.element;
+        const controls = element.querySelector('.timer-controls');
+        controls.innerHTML = `
+            <button class="timer-button stop-sound-button">
+                <span class="material-icons">volume_off</span>
+            </button>
+            <button class="timer-button restart-button">
+                <span class="material-icons">replay</span>
+            </button>
+            <button class="timer-button remove-button">
+                <span class="material-icons">delete</span>
+            </button>
+        `;
+        
+        // 新しいボタンのイベントリスナーを設定
+        controls.querySelector('.stop-sound-button').addEventListener('click', () => this.stopTimerSound());
+        controls.querySelector('.restart-button').addEventListener('click', () => this.restartTimer(timer));
+        controls.querySelector('.remove-button').addEventListener('click', () => this.removeTimer(timer.id));
+    }
+
+    stopTimerSound() {
+        this.timerAudio.pause();
+        this.timerAudio.currentTime = 0;
+    }
+
+    restartTimer(timer) {
+        timer.remaining = timer.duration;
+        timer.startTime = Date.now();
+        timer.pausedAt = null;
+        timer.completed = false;
+        this.updateTimerDisplay(timer);
+        
+        // コントロールを元に戻す
+        const element = timer.element;
+        const controls = element.querySelector('.timer-controls');
+        controls.innerHTML = `
+            <button class="timer-button pause-button">
+                <span class="material-icons">pause</span>
+            </button>
+            <button class="timer-button cancel-button">
+                <span class="material-icons">close</span>
+            </button>
+        `;
+        
+        // イベントリスナーを再設定
+        controls.querySelector('.pause-button').addEventListener('click', () => this.toggleTimer(timer.id));
+        controls.querySelector('.cancel-button').addEventListener('click', () => this.removeTimer(timer.id));
     }
 
     playTimerSound(soundIndex) {
-        if (this.customSounds[soundIndex]) {
-            const sound = this.customSounds[soundIndex];
+        if (soundIndex.startsWith('custom-')) {
+            const index = parseInt(soundIndex.split('-')[1]);
+            const sound = this.customSounds[index];
             this.timerAudio.src = URL.createObjectURL(sound.file);
         } else {
-            this.timerAudio.src = 'default-alarm.mp3';
+            // デフォルトサウンドの処理
+            const soundFile = soundIndex.split('-')[1];
+            this.timerAudio.src = `sounds/${soundFile}.mp3`;
         }
         this.timerAudio.play();
     }
@@ -290,6 +366,11 @@ class TimerApp {
         const currentTime = this.stopwatchRunning ? 
             this.stopwatchElapsed + (Date.now() - this.stopwatchStartTime) : 
             this.stopwatchElapsed;
+
+        // より頻繁な更新のために requestAnimationFrame を使用
+        if (this.stopwatchRunning) {
+            requestAnimationFrame(() => this.updateStopwatchDisplay());
+        }
 
         this.stopwatchDisplay.textContent = this.formatTime(currentTime);
     }

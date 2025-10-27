@@ -1,0 +1,362 @@
+:root {
+    --primary-color: #007aff;
+    --danger-color: #ff3b30;
+    --success-color: #34c759;
+    --background-color: #000000;
+    --surface-color: #1c1c1e;
+    --text-primary: rgba(255, 255, 255, 0.87);
+    --text-secondary: rgba(255, 255, 255, 0.6);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Roboto', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-primary);
+    line-height: 1.5;
+}
+
+.app-container {
+    max-width: 800px;
+    margin: 0 auto;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* タブバー */
+.tab-bar {
+    display: flex;
+    background-color: var(--surface-color);
+    padding: 10px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    max-width: 800px;
+    z-index: 100;
+}
+
+.tab-button {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: none;
+    border: none;
+    color: var(--text-secondary);
+    padding: 5px;
+    font-size: 10px;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.tab-button .material-icons {
+    font-size: 24px;
+    margin-bottom: 4px;
+}
+
+.tab-button.active {
+    color: var(--primary-color);
+}
+
+/* コンテンツエリア */
+.content {
+    flex: 1;
+    padding: 20px;
+    padding-bottom: 80px;
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+/* タイマー */
+.timer-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.add-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background-color: var(--surface-color);
+    border: none;
+    color: var(--primary-color);
+    padding: 15px;
+    border-radius: 10px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 16px;
+}
+
+.timer-item {
+    background-color: var(--surface-color);
+    border-radius: 10px;
+    padding: 15px;
+}
+
+.timer-info {
+    margin-bottom: 10px;
+}
+
+.timer-time {
+    font-size: 48px;
+    font-weight: 300;
+    text-align: center;
+    font-variant-numeric: tabular-nums;
+    margin-bottom: 10px;
+}
+
+.timer-progress {
+    margin-top: 10px;
+}
+
+.progress-bar {
+    height: 4px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+.progress {
+    height: 100%;
+    background-color: var(--primary-color);
+    width: 0;
+    transition: width 0.1s linear;
+}
+
+.timer-controls {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.timer-button {
+    background: none;
+    border: none;
+    color: var(--text-primary);
+    padding: 8px;
+    border-radius: 50%;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.timer-button.pause-button {
+    background-color: var(--surface-color);
+}
+
+.timer-button.cancel-button {
+    color: var(--danger-color);
+}
+
+/* ストップウォッチ */
+.stopwatch-container {
+    text-align: center;
+}
+
+.stopwatch-display {
+    margin: 40px 0;
+}
+
+.stopwatch-display .time {
+    font-size: 60px;
+    font-weight: 200;
+    font-variant-numeric: tabular-nums;
+}
+
+.lap-times-container {
+    background-color: var(--surface-color);
+    border-radius: 10px;
+    margin-bottom: 20px;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.lap-times-header {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    padding: 10px 15px;
+    color: var(--text-secondary);
+    font-size: 14px;
+    position: sticky;
+    top: 0;
+    background-color: var(--surface-color);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.lap-times {
+    display: flex;
+    flex-direction: column;
+}
+
+.lap-time {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    padding: 10px 15px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.lap-time:last-child {
+    border-bottom: none;
+}
+
+.stopwatch-controls {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.control-button {
+    border: none;
+    color: var(--text-primary);
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 14px;
+}
+
+.control-button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.control-button.start-button {
+    background-color: var(--success-color);
+}
+
+.control-button.lap-button,
+.control-button.reset-button {
+    background-color: var(--surface-color);
+}
+
+/* モーダル */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+}
+
+.modal-content {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background-color: var(--surface-color);
+    border-radius: 10px 10px 0 0;
+    padding: 20px;
+}
+
+.modal h2 {
+    margin-bottom: 20px;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.time-picker {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.picker-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.time-input {
+    width: 70px;
+    background: none;
+    border: none;
+    color: var(--text-primary);
+    font-size: 40px;
+    font-weight: 300;
+    text-align: center;
+}
+
+.time-label {
+    color: var(--text-secondary);
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+.sound-selection {
+    margin: 20px 0;
+}
+
+.sound-selection select {
+    width: 100%;
+    padding: 12px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: none;
+    border-radius: 10px;
+    color: var(--text-primary);
+    margin: 10px 0;
+}
+
+#customSound {
+    display: none;
+}
+
+.custom-sound-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: var(--primary-color);
+    padding: 12px;
+    border-radius: 10px;
+    cursor: pointer;
+    width: 100%;
+}
+
+.modal-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.modal-buttons button {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.cancel-button {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: var(--text-primary);
+}
+
+.save-button {
+    background-color: var(--primary-color);
+    color: var(--text-primary);
+}

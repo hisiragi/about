@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>こむぎのへや | ねことコーヒーと、ときどきコード</title>
-<meta name="description" content="こむぎの個人的な部屋。ねことコーヒー、写真とコードの話。">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23F5EEE7'/%3E%3Cg fill='%23C05621'%3E%3Ccircle cx='21' cy='24' r='5'/%3E%3Ccircle cx='33' cy='19' r='5'/%3E%3Ccircle cx='45' cy='26' r='4.5'/%3E%3Cpath d='M32 30c7 0 12 4.6 12 10 0 3.6-2.6 6-6 6-2 0-3.6-.9-6-.9s-4 .9-6 .9c-3.4 0-6-2.4-6-6 0-5.4 5-10 12-10z'/%3E%3C/g%3E%3C/svg%3E" type="image/svg+xml">
+<title>hisiragi | 写真とコーヒーと、ときどきコード</title>
+<meta name="description" content="hisiragi（ひしらぎ）の個人的な部屋。風景写真とコーヒー、ジャズとコードの記録。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23F5EEE7'/%3E%3Ccircle cx='32' cy='32' r='22' fill='%236E8F3C'/%3E%3Ccircle cx='32' cy='32' r='17' fill='%23A9C46C'/%3E%3Ccircle cx='32' cy='32' r='8' fill='%23F2F5DC'/%3E%3Cg fill='%233B3222'%3E%3Ccircle cx='43.5' cy='32' r='1.7'/%3E%3Ccircle cx='40.1' cy='40.1' r='1.7'/%3E%3Ccircle cx='32' cy='43.5' r='1.7'/%3E%3Ccircle cx='23.9' cy='40.1' r='1.7'/%3E%3Ccircle cx='20.5' cy='32' r='1.7'/%3E%3Ccircle cx='23.9' cy='23.9' r='1.7'/%3E%3Ccircle cx='32' cy='20.5' r='1.7'/%3E%3Ccircle cx='40.1' cy='23.9' r='1.7'/%3E%3C/g%3E%3C/svg%3E" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,400..700&family=Zen+Old+Mincho:wght@600;900&family=Zen+Kaku+Gothic+New:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -30,7 +30,6 @@ body::after{
   background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)' opacity='0.55'/%3E%3C/svg%3E");
 }
 ::selection{background:var(--accent);color:#fff}
-/* ミルク色のスクロールバー */
 ::-webkit-scrollbar{width:12px}
 ::-webkit-scrollbar-track{background:#4A3526}
 ::-webkit-scrollbar-thumb{background:var(--milk);border:3px solid #4A3526;border-radius:99px}
@@ -67,7 +66,7 @@ a{color:inherit}
 #hd.hide{transform:translateY(-110%)}
 .hd-in{width:min(1240px,94vw);margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:20px;padding:18px 0}
 .logo{display:flex;align-items:center;gap:10px;text-decoration:none}
-.logo .ic{width:22px;height:22px;color:var(--accent)}
+.logo .ic{width:24px;height:24px;color:var(--ink)}
 .logo-t{font-family:"Zen Old Mincho",serif;font-weight:900;font-size:18px;letter-spacing:.08em}
 .logo-e{font-size:9px;letter-spacing:.28em;color:var(--soft);margin-top:4px}
 .hd-nav{display:flex;gap:30px}
@@ -75,7 +74,6 @@ a{color:inherit}
 .hd-nav a::after{content:"";position:absolute;left:0;bottom:-2px;width:100%;height:2px;background:var(--accent);transform:scaleX(0);transform-origin:right;transition:transform .35s cubic-bezier(.16,1,.3,1)}
 .hd-nav a:hover::after{transform:scaleX(1);transform-origin:left}
 .n-idx{font-size:9px;color:var(--accent);letter-spacing:.15em;margin-right:6px;vertical-align:top}
-/* コーヒーカップボタン（湯気つき / クリックでGoogle検索） */
 .hd-side{display:flex;align-items:center;gap:10px;font-size:11px;letter-spacing:.1em;color:var(--ink);border:1.5px solid var(--ink);border-radius:999px;padding:8px 16px;background:var(--paper);cursor:pointer;font-family:"IBM Plex Mono",monospace;transition:transform .25s,box-shadow .25s,background .25s}
 .hd-side:hover{transform:translateY(-2px);box-shadow:3px 3px 0 var(--ink)}
 .hd-side:active{transform:translateY(1px);box-shadow:none}
@@ -156,15 +154,16 @@ a{color:inherit}
 .tl li:last-child{padding-bottom:0}
 .tl li::before{content:"";position:absolute;left:-35px;top:9px;width:11px;height:11px;border:2.5px solid var(--ink);background:var(--bg);border-radius:50%}
 .tl .yr{font-family:"Fraunces",serif;font-size:19px;font-weight:600;color:var(--accent);min-width:62px}
-.catcard{margin-top:56px;background:var(--paper);border:2px solid var(--ink);box-shadow:8px 8px 0 rgba(35,26,18,.1);padding:28px;position:relative}
-.catcard .l-tag{position:absolute;top:-11px;left:22px;background:var(--accent);color:#fff;font-family:"IBM Plex Mono",monospace;font-size:10px;letter-spacing:.2em;padding:3px 10px}
-.catcard-in{display:flex;gap:24px;flex-wrap:wrap}
-.catcard img{width:104px;height:104px;object-fit:cover;border-radius:50%;border:2px solid var(--ink)}
-.catcard h4{font-family:"Zen Old Mincho",serif;font-size:20px}
-.catcard h4 span{font-family:"Fraunces",serif;font-style:italic;font-size:14px;color:var(--soft);margin-left:8px}
-.cat-rows{margin-top:10px;font-size:14px}
-.cat-rows div{display:flex;gap:14px;padding:5px 0}
-.cat-rows b{font-family:"IBM Plex Mono",monospace;font-weight:500;font-size:10px;letter-spacing:.18em;color:var(--soft);min-width:66px;padding-top:5px}
+/* プロフィールカード（旧・同居猫カードの型をそのまま利用） */
+.pcard{margin-top:56px;background:var(--paper);border:2px solid var(--ink);box-shadow:8px 8px 0 rgba(35,26,18,.1);padding:28px;position:relative}
+.pcard .l-tag{position:absolute;top:-11px;left:22px;background:var(--accent);color:#fff;font-family:"IBM Plex Mono",monospace;font-size:10px;letter-spacing:.2em;padding:3px 10px}
+.pcard-in{display:flex;gap:24px;flex-wrap:wrap}
+.pcard img{width:104px;height:104px;object-fit:cover;border-radius:50%;border:2px solid var(--ink)}
+.pcard h4{font-family:"Zen Old Mincho",serif;font-size:20px}
+.pcard h4 span{font-family:"Fraunces",serif;font-style:italic;font-size:14px;color:var(--soft);margin-left:8px}
+.p-rows{margin-top:10px;font-size:14px}
+.p-rows div{display:flex;gap:14px;padding:5px 0}
+.p-rows b{font-family:"IBM Plex Mono",monospace;font-weight:500;font-size:10px;letter-spacing:.18em;color:var(--soft);min-width:86px;padding-top:5px}
 .stars{display:inline-flex;gap:3px;align-items:center}
 .stars .ic{width:14px;height:14px;color:var(--accent)}
 .stars .off{color:var(--line)}
@@ -263,7 +262,6 @@ footer{background:var(--ink);color:var(--bg);margin-top:60px;width:100%}
 .tt-label{position:absolute;right:calc(100% + 12px);top:52%;background:var(--ink);color:var(--bg);font-size:10px;letter-spacing:.2em;padding:6px 10px;white-space:nowrap;opacity:0;transform:translate(8px,-50%);transition:.3s}
 #totop:hover .tt-label,#totop:focus-visible .tt-label{opacity:1;transform:translate(0,-50%)}
 #totop.pouring .tt-label{opacity:0!important}
-/* こぼれる雫と水たまり */
 .tt-drop{position:absolute;top:52px;width:7px;height:10px;background:var(--accent);border-radius:45% 45% 60% 60%;opacity:0;pointer-events:none}
 .tt-drop.d1{left:4px}.tt-drop.d2{left:14px}.tt-drop.d3{left:8px}
 #totop.pouring .tt-drop.d1{animation:dropfall .8s ease-in .5s forwards}
@@ -339,10 +337,17 @@ footer{background:var(--ink);color:var(--bg);margin-top:60px;width:100%}
 <body>
 <a class="skip" href="#about">本文へスキップ</a>
 
-<!-- Hugeicons系ストロークアイコン（24px / 1.7 / round：HTMLインライン方式） -->
+<!-- アイコンセット（Hugeicons系ストロークスタイル / インラインSVG） -->
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
   <defs>
-    <symbol id="i-paw" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="5.5" cy="9.5" r="1.7"/><circle cx="9.8" cy="6.4" r="1.7"/><circle cx="14.2" cy="6.4" r="1.7"/><circle cx="18.5" cy="9.5" r="1.7"/><path d="M12 11c3.1 0 5.6 2.1 5.6 4.7 0 1.8-1.3 3-3 3-1 0-1.7-.5-2.6-.5s-1.6.5-2.6.5c-1.7 0-3-1.2-3-3C6.4 13.1 8.9 11 12 11Z"/></symbol>
+    <symbol id="i-kiwi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round">
+      <circle cx="12" cy="12" r="9"/>
+      <circle cx="12" cy="12" r="5.8"/>
+      <circle cx="12" cy="12" r="2.4"/>
+      <g fill="currentColor" stroke="none">
+        <circle cx="16.8" cy="12" r=".9"/><circle cx="15.4" cy="15.4" r=".9"/><circle cx="12" cy="16.8" r=".9"/><circle cx="8.6" cy="15.4" r=".9"/><circle cx="7.2" cy="12" r=".9"/><circle cx="8.6" cy="8.6" r=".9"/><circle cx="12" cy="7.2" r=".9"/><circle cx="15.4" cy="8.6" r=".9"/>
+      </g>
+    </symbol>
     <symbol id="i-coffee" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 10.5h12v4.5a5 5 0 0 1-5 5h-2a5 5 0 0 1-5-5v-4.5Z"/><path d="M16.5 11.5h1.2a2.4 2.4 0 0 1 0 4.8h-1.4"/><path d="M8 3v2M12 2.4v2.6M16 3v2"/></symbol>
     <symbol id="i-cam" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8.5h3l1.6-2.6h6.8L17 8.5h3a1 1 0 0 1 1 1V18a1.5 1.5 0 0 1-1.5 1.5h-15A1.5 1.5 0 0 1 3 18V9.5a1 1 0 0 1 1-1Z"/><circle cx="12" cy="13.4" r="3.6"/></symbol>
     <symbol id="i-arrow-d" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v15M6.5 13.5 12 19l5.5-5.5"/></symbol>
@@ -370,9 +375,9 @@ footer{background:var(--ink);color:var(--bg);margin-top:60px;width:100%}
 <header id="hd">
   <div class="hd-in">
     <a class="logo" href="#top" aria-label="トップへ戻る">
-      <svg class="ic"><use href="#i-paw"/></svg>
-      <span class="logo-t">こむぎのへや</span>
-      <span class="logo-e mono">KOMUGI'S ROOM</span>
+      <svg class="ic"><use href="#i-kiwi"/></svg>
+      <span class="logo-t">ひしらぎ</span>
+      <span class="logo-e mono">HISIRAGI'S ROOM</span>
     </a>
     <nav class="hd-nav" aria-label="メインナビゲーション">
       <a href="#about"><span class="n-idx mono">01</span>自己紹介</a>
@@ -380,7 +385,6 @@ footer{background:var(--ink);color:var(--bg);margin-top:60px;width:100%}
       <a href="#links"><span class="n-idx mono">03</span>リンク</a>
       <a href="#contact"><span class="n-idx mono">04</span>おたより</a>
     </nav>
-    <!-- コーヒーカップ（湯気つき）/ クリックでこの一杯をGoogle検索 -->
     <button class="hd-side" id="brewBtn" title="この一杯をGoogleで検索する">
       <svg class="hd-cup" viewBox="0 0 24 26" aria-hidden="true">
         <path class="hd-s hd-s1" d="M9 2.5c0 1.6-1.5 1.9-1.5 3.6"/>
@@ -404,11 +408,11 @@ footer{background:var(--ink);color:var(--bg);margin-top:60px;width:100%}
           <span>天気: たぶん晴れ</span>
         </div>
         <h1 class="hero-t lmg">
-          <span class="lm"><span class="lmi">ねこと、コーヒーと、</span></span>
+          <span class="lm"><span class="lmi">風景と、コーヒーと、</span></span>
           <span class="lm"><span class="lmi">それから<em>コード</em>のこと。</span></span>
         </h1>
-        <p class="hero-name rv" data-d="200">ようこそ。<span class="en">Komugi</span> の、ちいさな部屋です。</p>
-        <p class="hero-lead rv" data-d="300">こんにちは、こむぎです。ふだんはウェブサイトをつくり、あまった時間で猫のしらすを撮り、コーヒーを淹れています。この部屋には、その全部を少しずつ。</p>
+        <p class="hero-name rv" data-d="200">ようこそ。<span class="en">hisiragi</span> の、ちいさな部屋です。</p>
+        <p class="hero-lead rv" data-d="300">こんにちは、ひしらぎです。ふだんはウェブサイトをつくったりデザインをしたり、あまった時間で風景を撮り、動画を編集しています。この部屋には、その全部を少しずつ。</p>
         <div class="hero-cta rv" data-d="400">
           <a class="btn btn-ink" href="#about"><svg class="ic"><use href="#i-arrow-d"/></svg>自己紹介をよむ</a>
           <a class="btn btn-ghost" href="#frames">写真をみる<svg class="ic"><use href="#i-arrow-r"/></svg></a>
@@ -416,22 +420,22 @@ footer{background:var(--ink);color:var(--bg);margin-top:60px;width:100%}
         <ul class="hero-stat mono rv" data-d="500">
           <li><b>07</b>枚の写真</li>
           <li><b>05</b>件のリンク</li>
-          <li><b>01</b>ぴきの猫</li>
+          <li><b>06</b>個のすきなもの</li>
         </ul>
       </div>
       <div class="hero-visual">
         <figure class="portrait rv" data-d="200">
-          <div class="ph kb"><img src="https://picsum.photos/seed/komugi-portrait/720/900" width="720" height="900" alt="こむぎのポートレート" fetchpriority="high"></div>
+          <div class="ph kb"><img src="https://picsum.photos/seed/hisiragi-portrait/720/900" width="720" height="900" alt="hisiragiのポートレート" fetchpriority="high"></div>
           <figcaption class="mono">FIG.01 — 今日のひと</figcaption>
         </figure>
         <figure class="polaroid rv" data-d="450">
-          <img src="https://picsum.photos/seed/shirasu-nap/420/420" width="420" height="420" alt="猫のしらす" loading="lazy">
-          <figcaption>しらす、あくび。</figcaption>
+          <img src="https://picsum.photos/seed/todays-coffee-cup/420/420" width="420" height="420" alt="今日のコーヒー" loading="lazy">
+          <figcaption>今日の一杯。</figcaption>
         </figure>
         <svg class="badge" viewBox="0 0 120 120" aria-hidden="true">
           <defs><path id="circ" d="M60,60 m-47,0 a47,47 0 1,1 94,0 a47,47 0 1,1 -94,0"/></defs>
-          <text><textPath href="#circ">FRESHLY BREWED ・ HANDMADE SITE ・ こむぎのへや ・</textPath></text>
-          <g transform="translate(48,48)"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#C05621" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="5.5" cy="9.5" r="1.7"/><circle cx="9.8" cy="6.4" r="1.7"/><circle cx="14.2" cy="6.4" r="1.7"/><circle cx="18.5" cy="9.5" r="1.7"/><path d="M12 11c3.1 0 5.6 2.1 5.6 4.7 0 1.8-1.3 3-3 3-1 0-1.7-.5-2.6-.5s-1.6.5-2.6.5c-1.7 0-3-1.2-3-3C6.4 13.1 8.9 11 12 11Z"/></svg></g>
+          <text><textPath href="#circ">FRESHLY BREWED ・ HANDMADE SITE ・ ひしらぎのへや ・</textPath></text>
+          <g transform="translate(48,48)"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#C05621" stroke-width="1.7" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5.8"/><circle cx="12" cy="12" r="2.4"/><g fill="#C05621" stroke="none"><circle cx="16.8" cy="12" r=".9"/><circle cx="15.4" cy="15.4" r=".9"/><circle cx="12" cy="16.8" r=".9"/><circle cx="8.6" cy="15.4" r=".9"/><circle cx="7.2" cy="12" r=".9"/><circle cx="8.6" cy="8.6" r=".9"/><circle cx="12" cy="7.2" r=".9"/><circle cx="15.4" cy="8.6" r=".9"/></g></svg></g>
         </svg>
       </div>
     </div>
@@ -442,13 +446,13 @@ footer{background:var(--ink);color:var(--bg);margin-top:60px;width:100%}
   <div class="marquee" aria-hidden="true">
     <div class="mq-track" id="mq">
       <span class="mq-item"><svg class="ic"><use href="#i-coffee"/></svg>COFFEE</span>
-      <span class="mq-item"><svg class="ic"><use href="#i-paw"/></svg>CAT</span>
-      <span class="mq-item"><svg class="ic"><use href="#i-cam"/></svg>CAMERA</span>
-      <span class="mq-item"><svg class="ic"><use href="#i-bolt"/></svg>CODE</span>
-      <span class="mq-item"><svg class="ic"><use href="#i-book"/></svg>ZINE</span>
+      <span class="mq-item"><svg class="ic"><use href="#i-kiwi"/></svg>KIWI</span>
+      <span class="mq-item"><svg class="ic"><use href="#i-cam"/></svg>PHOTO</span>
       <span class="mq-item"><svg class="ic"><use href="#i-music"/></svg>JAZZ</span>
-      <span class="mq-item"><svg class="ic"><use href="#i-film"/></svg>FILM</span>
-      <span class="mq-item"><svg class="ic"><use href="#i-sun"/></svg>MORNING WALK</span>
+      <span class="mq-item"><svg class="ic"><use href="#i-star"/></svg>POP</span>
+      <span class="mq-item"><svg class="ic"><use href="#i-bolt"/></svg>CODE</span>
+      <span class="mq-item"><svg class="ic"><use href="#i-book"/></svg>DESIGN</span>
+      <span class="mq-item"><svg class="ic"><use href="#i-film"/></svg>FILM EDIT</span>
     </div>
   </div>
 
@@ -463,8 +467,8 @@ footer{background:var(--ink);color:var(--bg);margin-top:60px;width:100%}
       <div class="about-grid">
         <div class="about-left">
           <figure class="polaroid rv">
-            <img src="https://picsum.photos/seed/komugi-desk/460/460" width="460" height="460" alt="作業机の様子" loading="lazy">
-            <figcaption>作業机（しらす検閲済み）</figcaption>
+            <img src="https://picsum.photos/seed/hisiragi-desk/460/460" width="460" height="460" alt="作業机の様子" loading="lazy">
+            <figcaption>作業机（珈琲検閲済み）</figcaption>
           </figure>
           <blockquote class="quote rv" data-d="150">「湯沸かし待ちも、<br>仕事のうち。」<small>— 座右の銘</small></blockquote>
         </div>
@@ -472,44 +476,43 @@ footer{background:var(--ink);color:var(--bg);margin-top:60px;width:100%}
           <h3 class="rv"><svg class="ic"><use href="#i-coffee"/></svg>基本データ</h3>
           <table class="spec rv" data-d="100">
             <tbody>
-              <tr><th>NAME</th><td>こむぎ / Komugi</td></tr>
-              <tr><th>WORK</th><td>フロントエンドエンジニア（たまにデザイン）</td></tr>
-              <tr><th>BASE</th><td>京都・古いマンションの4階</td></tr>
-              <tr><th>PARTNER</th><td>白茶猫「しらす」（推定4歳・幹部）</td></tr>
+              <tr><th>NAME</th><td>hisiragi / ひしらぎ</td></tr>
+              <tr><th>WORK</th><td>Web制作 / デザイン / 動画編集</td></tr>
+              <tr><th>BASE</th><td>日本のどこか</td></tr>
               <tr><th>BEANS</th><td>エチオピアの浅煎り、気分で深煎り</td></tr>
-              <tr><th>NOW</th><td>フィルムカメラ熱が再燃中</td></tr>
+              <tr><th>NOW</th><td>撮りためた旅の動画を編集中</td></tr>
             </tbody>
           </table>
-          <h3 class="rv"><svg class="ic"><use href="#i-paw"/></svg>すきなもの</h3>
+          <h3 class="rv"><svg class="ic"><use href="#i-kiwi"/></svg>すきなもの</h3>
           <div class="chips rv" data-d="100">
-            <span class="chip"><svg class="ic"><use href="#i-coffee"/></svg>純喫茶</span>
-            <span class="chip"><svg class="ic"><use href="#i-cam"/></svg>フィルムカメラ</span>
-            <span class="chip"><svg class="ic"><use href="#i-music"/></svg>レコード</span>
-            <span class="chip"><svg class="ic"><use href="#i-book"/></svg>ZINE・活版</span>
-            <span class="chip"><svg class="ic"><use href="#i-sun"/></svg>朝の散歩</span>
-            <span class="chip"><svg class="ic"><use href="#i-paw"/></svg>肉球</span>
-            <span class="chip"><svg class="ic"><use href="#i-bolt"/></svg>深夜のコード</span>
+            <span class="chip"><svg class="ic"><use href="#i-cam"/></svg>風景写真</span>
+            <span class="chip"><svg class="ic"><use href="#i-music"/></svg>ジャズ</span>
+            <span class="chip"><svg class="ic"><use href="#i-star"/></svg>ポップ音楽</span>
+            <span class="chip"><svg class="ic"><use href="#i-bolt"/></svg>コーディング</span>
+            <span class="chip"><svg class="ic"><use href="#i-book"/></svg>デザイン</span>
+            <span class="chip"><svg class="ic"><use href="#i-film"/></svg>動画編集</span>
           </div>
           <h3 class="rv"><svg class="ic"><use href="#i-clock"/></svg>これまでのこと</h3>
           <ul class="tl rv" data-d="100">
             <li><span class="yr">2019</span><span>はじめての個人サイトを手書きHTMLで公開</span></li>
-            <li><span class="yr">2021</span><span>制作会社でフロントエンド担当に</span></li>
-            <li><span class="yr">2022</span><span>しらすに拾われる（拾ったのはこちら）</span></li>
-            <li><span class="yr">2023</span><span>フィルムカメラをはじめる</span></li>
+            <li><span class="yr">2021</span><span>コーディングに本格的にのめり込む</span></li>
+            <li><span class="yr">2022</span><span>動画編集とジャズ喫茶にはまる</span></li>
+            <li><span class="yr">2023</span><span>風景写真をはじめる</span></li>
             <li><span class="yr">2025</span><span>この部屋をお引越し</span></li>
           </ul>
-          <div class="catcard rv" data-d="150">
-            <span class="l-tag">同居猫 / ROOMMATE</span>
-            <div class="catcard-in">
-              <img src="https://picsum.photos/seed/shirasu-face/240/240" width="240" height="240" alt="猫のしらすの顔" loading="lazy">
+          <!-- プロフィールカード -->
+          <div class="pcard rv" data-d="150">
+            <span class="l-tag">PROFILE / 自己紹介カード</span>
+            <div class="pcard-in">
+              <img src="https://picsum.photos/seed/hisiragi-avatar/240/240" width="240" height="240" alt="hisiragiのアバター" loading="lazy">
               <div>
-                <h4>しらす <span class="en">SHIRASU</span></h4>
-                <div class="cat-rows">
-                  <div><b>毛色</b><span>白茶（お腹は真っ白）</span></div>
-                  <div><b>特技</b><span>朝5時の顔踏みキーボード</span></div>
-                  <div><b>弱点</b><span>おやつの袋の音</span></div>
-                  <div><b>ツンデレ度</b><span class="stars"><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg><svg class="ic off"><use href="#i-star-o"/></svg></span></div>
-                  <div><b>破壊力</b><span class="stars"><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg></span></div>
+                <h4>ひしらぎ <span class="en">HISIRAGI</span></h4>
+                <div class="p-rows">
+                  <div><b>趣味</b><span>風景写真 / ジャズ / ポップ音楽</span></div>
+                  <div><b>特技</b><span>深夜のコーディング</span></div>
+                  <div><b>弱点</b><span>新しいフォントに目がない</span></div>
+                  <div><b>コーヒー依存度</b><span class="stars"><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg></span></div>
+                  <div><b>やる気の曲線</b><span class="stars"><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg><svg class="ic off"><use href="#i-star-o"/></svg></span></div>
                 </div>
               </div>
             </div>
@@ -529,36 +532,36 @@ footer{background:var(--ink);color:var(--bg);margin-top:60px;width:100%}
       </div>
       <p class="lead-p rv">このあいだ撮ったものを、漫画みたいにコマ割りして並べました。クリックすると大きく現像できます。</p>
       <div class="frames">
-        <figure class="frame f1 rv" tabindex="0" role="button" aria-label="写真を拡大: 窓辺のしらす" data-full="https://picsum.photos/seed/window-cat-light/1600/1000" data-cap="P-01 窓辺のしらす — '25 03">
-          <div class="ph"><span class="p-num">P-01</span><img src="https://picsum.photos/seed/window-cat-light/1000/625" alt="窓辺のしらす" loading="lazy"></div>
-          <figcaption class="fcap mono"><b>窓辺のしらす</b><span>'25 03</span></figcaption>
+        <figure class="frame f1 rv" tabindex="0" role="button" aria-label="写真を拡大: 朝の光の街角" data-full="https://picsum.photos/seed/morning-street-light/1600/1000" data-cap="P-01 朝の光の街角 — '25 03">
+          <div class="ph"><span class="p-num">P-01</span><img src="https://picsum.photos/seed/morning-street-light/1000/625" alt="朝の光の街角" loading="lazy"></div>
+          <figcaption class="fcap mono"><b>朝の光の街角</b><span>'25 03</span></figcaption>
         </figure>
         <figure class="frame f2 rv" data-d="80" tabindex="0" role="button" aria-label="写真を拡大: 午後のラテ" data-full="https://picsum.photos/seed/latte-art-cup/1200/1500" data-cap="P-02 午後のラテ — '25 03">
           <div class="ph"><span class="p-num">P-02</span><img src="https://picsum.photos/seed/latte-art-cup/700/875" alt="ラテアート" loading="lazy"></div>
           <figcaption class="fcap mono"><b>午後のラテ</b><span>'25 03</span></figcaption>
         </figure>
         <figure class="frame f3 rv" tabindex="0" role="button" aria-label="写真を拡大: 机の上の相棒" data-full="https://picsum.photos/seed/film-camera-desk/1400/1400" data-cap="P-03 机の上の相棒 — '25 02">
-          <div class="ph"><span class="p-num">P-03</span><img src="https://picsum.photos/seed/film-camera-desk/640/640" alt="フィルムカメラ" loading="lazy"></div>
+          <div class="ph"><span class="p-num">P-03</span><img src="https://picsum.photos/seed/film-camera-desk/640/640" alt="カメラ" loading="lazy"></div>
           <figcaption class="fcap mono"><b>机の上の相棒</b><span>'25 02</span></figcaption>
         </figure>
-        <figure class="frame f4 rv" data-d="80" tabindex="0" role="button" aria-label="写真を拡大: 京都の路地" data-full="https://picsum.photos/seed/kyoto-alley-film/1400/1400" data-cap="P-04 京都の路地 — '25 02">
-          <div class="ph"><span class="p-num">P-04</span><img src="https://picsum.photos/seed/kyoto-alley-film/640/640" alt="京都の路地" loading="lazy"></div>
-          <figcaption class="fcap mono"><b>京都の路地</b><span>'25 02</span></figcaption>
+        <figure class="frame f4 rv" data-d="80" tabindex="0" role="button" aria-label="写真を拡大: 路地裏スナップ" data-full="https://picsum.photos/seed/back-alley-snap/1400/1400" data-cap="P-04 路地裏スナップ — '25 02">
+          <div class="ph"><span class="p-num">P-04</span><img src="https://picsum.photos/seed/back-alley-snap/640/640" alt="路地裏のスナップ" loading="lazy"></div>
+          <figcaption class="fcap mono"><b>路地裏スナップ</b><span>'25 02</span></figcaption>
         </figure>
         <figure class="frame f5 rv" data-d="160" tabindex="0" role="button" aria-label="写真を拡大: 週末のシナモン" data-full="https://picsum.photos/seed/cinnamon-roll-cafe/1400/1400" data-cap="P-05 週末のシナモン — '25 01">
           <div class="ph"><span class="p-num">P-05</span><img src="https://picsum.photos/seed/cinnamon-roll-cafe/640/640" alt="シナモンロール" loading="lazy"></div>
           <figcaption class="fcap mono"><b>週末のシナモン</b><span>'25 01</span></figcaption>
         </figure>
-        <figure class="frame f6 rv" tabindex="0" role="button" aria-label="写真を拡大: 毛布と肉球" data-full="https://picsum.photos/seed/cat-paws-blanket/1200/1500" data-cap="P-06 毛布と肉球 — '25 01">
-          <div class="ph"><span class="p-num">P-06</span><img src="https://picsum.photos/seed/cat-paws-blanket/700/875" alt="毛布の上の猫の手" loading="lazy"></div>
-          <figcaption class="fcap mono"><b>毛布と肉球</b><span>'25 01</span></figcaption>
+        <figure class="frame f6 rv" tabindex="0" role="button" aria-label="写真を拡大: 湖畔の静けさ" data-full="https://picsum.photos/seed/quiet-lakeside/1200/1500" data-cap="P-06 湖畔の静けさ — '25 01">
+          <div class="ph"><span class="p-num">P-06</span><img src="https://picsum.photos/seed/quiet-lakeside/700/875" alt="湖畔の風景" loading="lazy"></div>
+          <figcaption class="fcap mono"><b>湖畔の静けさ</b><span>'25 01</span></figcaption>
         </figure>
         <figure class="frame f7 rv" data-d="80" tabindex="0" role="button" aria-label="写真を拡大: カウンター席の特等席" data-full="https://picsum.photos/seed/coffee-bar-counter/1600/900" data-cap="P-07 カウンター席の特等席 — '24 12">
           <div class="ph"><span class="p-num">P-07</span><img src="https://picsum.photos/seed/coffee-bar-counter/1000/563" alt="珈琲店のカウンター" loading="lazy"></div>
           <figcaption class="fcap mono"><b>カウンター席の特等席</b><span>'24 12</span></figcaption>
         </figure>
       </div>
-      <p class="g-note mono rv"><svg class="ic"><use href="#i-cam"/></svg>SHOT ON FILM &amp; PHONE / 現像: このサイト内</p>
+      <p class="g-note mono rv"><svg class="ic"><use href="#i-cam"/></svg>SHOT ON CAMERA &amp; PHONE / 現像: このサイト内</p>
     </div>
   </section>
 
@@ -605,10 +608,10 @@ footer{background:var(--ink);color:var(--bg);margin-top:60px;width:100%}
         <div class="invite rv" data-d="100">
           <div>
             <h3>相互リンク、いつでも歓迎です。</h3>
-            <p>個人サイト・ブログ・ZINE、ジャンルは問いません。<br>下記からお手紙をください。しらすが目を通します。</p>
+            <p>個人サイト・ブログ・ZINE、ジャンルは問いません。<br>下記からおたよりをどうぞ。コーヒー片目に読みます。</p>
             <small class="mono">TEXT LINK OK / BANNER 200×40 対応</small>
           </div>
-          <a class="btn btn-ink" href="mailto:hello@komugi.example"><svg class="ic"><use href="#i-mail"/></svg>おたよりを書く</a>
+          <a class="btn btn-ink" href="mailto:hello@hisiragi.site"><svg class="ic"><use href="#i-mail"/></svg>おたよりを書く</a>
         </div>
       </div>
     </div>
@@ -623,11 +626,11 @@ footer{background:var(--ink);color:var(--bg);margin-top:60px;width:100%}
       <span class="lm"><span class="lmi">また、お湯が</span></span>
       <span class="lm"><span class="lmi">沸いたら、会いましょう。</span></span>
     </h2>
-    <a class="btn rv" style="background:var(--bg);border-color:var(--bg);box-shadow:4px 4px 0 var(--accent)" href="mailto:hello@komugi.example"><svg class="ic"><use href="#i-mail"/></svg>hello@komugi.example</a>
+    <a class="btn rv" style="background:var(--bg);border-color:var(--bg);box-shadow:4px 4px 0 var(--accent)" href="mailto:hello@hisiragi.site"><svg class="ic"><use href="#i-mail"/></svg>hello@hisiragi.site</a>
     <div class="ft-grid rv" data-d="150">
       <div>
-        <h4>KOMUGI'S ROOM</h4>
-        <p>ねことコーヒーの個人的な記録。たまにコードの話。更新は湯沸かしペースでのんびりと。</p>
+        <h4>HISIRAGI</h4>
+        <p>風景写真とコーヒーの個人的な記録。たまにコードの話。更新は湯沸かしペースでのんびりと。</p>
       </div>
       <div>
         <h4>SITEMAP</h4>
@@ -648,14 +651,14 @@ footer{background:var(--ink);color:var(--bg);margin-top:60px;width:100%}
     </div>
   </div>
   <div class="wrap ft-bar mono">
-    <span>© <span id="yr">2025</span> こむぎのへや — ねことコーヒーの記録</span>
+    <span>© <span id="yr">2025</span> hisiragi — 風景とコーヒーの記録</span>
     <span class="ft-hint">HINT: Pキー = 音楽 / .キー = コーヒー</span>
     <span class="workers"><svg class="ic"><use href="#i-bolt"/></svg>Handmade HTML — No Framework</span>
   </div>
 </footer>
 
-<!-- ============ BACK TO TOP（こぼれるカップ＆スーッと消えるねこ） ============ -->
-<button id="totop" aria-label="ページの先頭へ戻る（ねことコーヒー）">
+<!-- ============ BACK TO TOP ============ -->
+<button id="totop" aria-label="ページの先頭へ戻る（コーヒー）">
   <span class="tt-label mono">PAGE TOP</span>
   <span class="tt-body">
     <svg class="tt-steam" viewBox="0 0 30 24" aria-hidden="true">
@@ -686,7 +689,7 @@ footer{background:var(--ink);color:var(--bg);margin-top:60px;width:100%}
   <div class="spot-card" role="dialog" aria-label="Spotify プレイヤー" aria-modal="true">
     <div class="spot-head mono">
       <span class="spot-on"><span class="dot"></span>ON AIR</span>
-      <span class="spot-title">こむぎのレコード棚</span>
+      <span class="spot-title">ひしらぎのレコード棚</span>
       <button class="spot-x" id="spotClose" aria-label="プレイヤーを閉じる"><svg class="ic"><use href="#i-x"/></svg></button>
     </div>
     <iframe id="spotFrame" title="Spotify プレイヤー" loading="lazy" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
@@ -714,9 +717,11 @@ footer{background:var(--ink);color:var(--bg);margin-top:60px;width:100%}
 <script>
 (function(){
   "use strict";
-
-  var SPOTIFY_EMBED = "https://open.spotify.com/playlist/0mmSRrNdU4MkI1fxDrg8dx"; // ← 自分のSpotify embed URL
-  var REDIRECT_URL  = "https://itfis.net"; // ← 「.」キーで飛ぶURL
+  /* ========================================================
+     ここだけ書き換える設定
+     ======================================================== */
+  var SPOTIFY_EMBED = "https://open.spotify.com/embed/playlist/37i9dQZF1DX6J5NfMJS675"; // ← 自分のSpotify embed URL
+  var REDIRECT_URL  = "https://example.com"; // ← 「.」キーで飛ぶURL
 
   var reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   var $ = function(s,c){ return (c||document).querySelector(s); };
@@ -804,7 +809,7 @@ footer{background:var(--ink);color:var(--bg);margin-top:60px;width:100%}
   }, {passive:true});
   onFrame();
 
-  /* ---- TOPボタン：カップを傾けてこぼす → ねこスーッ → トップへ ---- */
+  /* ---- TOPボタン：カップを傾けてこぼす → トップへ ---- */
   totop.addEventListener("click", function(){
     if(pouring) return;
     if(reduced){ window.scrollTo({top:0, behavior:"auto"}); return; }
@@ -815,7 +820,7 @@ footer{background:var(--ink);color:var(--bg);margin-top:60px;width:100%}
       window.scrollTo({top:0, behavior:"smooth"});
     }, 420);
     setTimeout(function(){
-      totop.classList.remove("pouring"); // ねこ復活・何度でも使える
+      totop.classList.remove("pouring");
       pouring = false;
       onFrame();
     }, 1650);

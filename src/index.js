@@ -323,7 +323,7 @@ footer{background:var(--ink);color:var(--bg);margin-top:60px}
   <div class="hd-in">
     <a class="logo" href="#top" aria-label="トップへ戻る">
       <svg class="ic"><use href="#i-paw"/></svg>
-      <span class="logo-t">こむぎのへや</span>
+      <span class="logo-t">hisiragi/ひしらぎ</span>
       <span class="logo-e mono">KOMUGI'S ROOM</span>
     </a>
     <nav class="hd-nav" aria-label="メインナビゲーション">
@@ -347,25 +347,25 @@ footer{background:var(--ink);color:var(--bg);margin-top:60px}
           <span>天気: たぶん晴れ</span>
         </div>
         <h1 class="hero-t lmg">
-          <span class="lm"><span class="lmi">ねこと、コーヒーと、</span></span>
-          <span class="lm"><span class="lmi">それから<em>コード</em>のこと。</span></span>
+          <span class="lm"><span class="lmi">hisiragiのこと、</span></span>
+          <span class="lm"><span class="lmi">それから<em>好きなこと</em>について。</span></span>
         </h1>
-        <p class="hero-name rv" data-d="200">ようこそ。<span class="en">Komugi</span> の、ちいさな部屋です。</p>
-        <p class="hero-lead rv" data-d="300">こんにちは、こむぎです。ふだんはウェブサイトをつくり、あまった時間で猫のしらすを撮り、コーヒーを淹れています。この部屋には、その全部を少しずつ。</p>
+        <p class="hero-name rv" data-d="200">ようこそ。<span class="ja">hisiragi</span> の、ホームページです。</p>
+        <p class="hero-lead rv" data-d="300">こんにちは、hisiragiです。ふだんはウェブサイトをつくり、あまった時間で風景を撮っています。このページには、その全部を少しずつ。</p>
         <div class="hero-cta rv" data-d="400">
           <a class="btn btn-ink" href="#about"><svg class="ic"><use href="#i-arrow-d"/></svg>自己紹介をよむ</a>
           <a class="btn btn-ghost" href="#frames">写真をみる<svg class="ic"><use href="#i-arrow-r"/></svg></a>
         </div>
         <ul class="hero-stat mono rv" data-d="500">
-          <li><b>07</b>枚の写真</li>
-          <li><b>05</b>件のリンク</li>
-          <li><b>01</b>ぴきの猫</li>
+          <li><b>29</b>枚の写真</li>
+          <li><b>08</b>件のサイト</li>
+          <li><b>04</b>のコミュニティ</li>
         </ul>
       </div>
       <div class="hero-visual">
         <figure class="portrait rv" data-d="200">
-          <div class="ph kb"><img src="https://picsum.photos/seed/komugi-portrait/720/900" width="720" height="900" alt="こむぎのポートレート" fetchpriority="high"></div>
-          <figcaption class="mono">FIG.01 — 今日のひと</figcaption>
+          <div class="ph kb"><img src="/ocean.jpg" width="720" height="900" alt="海の画像、左上に小さな離島。" fetchpriority="high"></div>
+          <figcaption class="mono">夏の伊豆から見える太平洋</figcaption>
         </figure>
         <figure class="polaroid rv" data-d="450">
           <img src="https://picsum.photos/seed/shirasu-nap/420/420" width="420" height="420" alt="猫のしらす" loading="lazy">

@@ -5,8 +5,8 @@ const HTML = `<!DOCTYPE html>
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>こむぎのへや | ねことコーヒーと、ときどきコード</title>
-<meta name="description" content="こむぎの個人的な部屋。ねことコーヒー、写真とコードの話。">
+<title>hisiragi/ひしらぎ | 自己紹介ページ</title>
+<meta name="description" content="ひしらぎの個人的な部屋、写真とコードの話。">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

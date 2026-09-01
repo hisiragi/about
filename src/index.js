@@ -364,7 +364,7 @@ footer{background:var(--ink);color:var(--bg);margin-top:60px}
       </div>
       <div class="hero-visual">
         <figure class="portrait rv" data-d="200">
-          <div class="ph kb"><img src="/src/ocean.jpg" width="720" height="900" alt="海の画像、左上に小さな離島。" fetchpriority="high"></div>
+          <div class="ph kb"><img src="/public/img/20260815_124347(1).jpg" width="720" height="900" alt="海の画像、左上に小さな離島。" fetchpriority="high"></div>
           <figcaption class="mono">夏の伊豆から見える太平洋</figcaption>
         </figure>
         <figure class="polaroid rv" data-d="450">

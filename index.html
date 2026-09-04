@@ -733,7 +733,7 @@ footer{background:var(--ink);color:var(--bg);margin-top:60px;width:100%}
   var wd = ["日","月","火","水","木","金","土"];
   $("#today").textContent = d.getFullYear()+"."+pad(d.getMonth()+1)+"."+pad(d.getDate())+" ("+wd[d.getDay()]+")";
   $("#yr").textContent = d.getFullYear();
-  var brews = ["エチオピア・モカ / 浅煎り","ケニアAA / 中深煎り","グアテマラ / 中煎り","深煎りブレンド","コロンビア / 中深煎り","マンデリン / 深煎り"];
+  var brews = ["エチオピア・モカ / 浅煎り","ケニアAA / 中深煎り","グアテマラ / 中煎り","深煎りブレンド","コロンビア / 中深煎り","マンデリン / 深煎り","カフェオレ"];
   var brew = brews[Math.floor(Math.random()*brews.length)];
   $("#hdbrew").textContent = brew;
 

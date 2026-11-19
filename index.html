@@ -130,43 +130,68 @@ a{color:inherit}
 .sec-en{margin-left:auto;font-size:11px;letter-spacing:.32em;color:var(--soft)}
 .lead-p{max-width:36em;color:var(--soft);margin-bottom:40px;font-size:15px}
 
-/* ================= ABOUT ================= */
-.about-grid{display:grid;grid-template-columns:360px 1fr;gap:72px;align-items:start}
-.about-left{position:sticky;top:120px}
-.about-left .polaroid{position:relative;left:auto;bottom:auto;width:230px;transform:rotate(-3deg);margin-bottom:34px}
-.quote{font-family:"Zen Old Mincho",serif;font-weight:600;font-size:19px;line-height:2}
-.quote small{display:block;margin-top:10px;font-family:"IBM Plex Mono",monospace;font-size:10px;letter-spacing:.24em;color:var(--soft)}
-.about-right h3{font-family:"Zen Old Mincho",serif;font-size:21px;margin:52px 0 20px;display:flex;align-items:center;gap:12px}
-.about-right h3 .ic{color:var(--accent)}
-.about-right h3:first-child{margin-top:0}
-.spec{width:100%;border-collapse:collapse}
-.spec tr{border-top:1px solid var(--line);transition:background .25s}
-.spec tr:hover{background:var(--paper)}
-.spec th{width:150px;text-align:left;font-family:"IBM Plex Mono",monospace;font-weight:500;font-size:10px;letter-spacing:.2em;color:var(--soft);padding:15px 10px 15px 6px;vertical-align:top}
-.spec td{padding:15px 0;font-weight:500;font-size:15px}
-.chips{display:flex;flex-wrap:wrap;gap:12px}
-.chip{display:inline-flex;align-items:center;gap:9px;padding:9px 16px;border:1.5px solid var(--ink);border-radius:999px;background:var(--paper);font-size:13px;font-weight:500;transition:transform .25s,background .25s,color .25s}
-.chip .ic{width:15px;height:15px;color:var(--accent);transition:color .25s}
-.chip:hover{background:var(--ink);color:var(--bg);transform:translateY(-3px)}
-.chip:hover .ic{color:var(--accent)}
-.tl{list-style:none;border-left:2px solid var(--ink);margin-left:6px;padding-left:28px}
-.tl li{position:relative;padding-bottom:26px;display:flex;gap:20px;flex-wrap:wrap;align-items:baseline}
-.tl li:last-child{padding-bottom:0}
-.tl li::before{content:"";position:absolute;left:-35px;top:9px;width:11px;height:11px;border:2.5px solid var(--ink);background:var(--bg);border-radius:50%}
-.tl .yr{font-family:"Fraunces",serif;font-size:19px;font-weight:600;color:var(--accent);min-width:62px}
-/* プロフィールカード（旧・同居猫カードの型をそのまま利用） */
-.pcard{margin-top:56px;background:var(--paper);border:2px solid var(--ink);box-shadow:8px 8px 0 rgba(35,26,18,.1);padding:28px;position:relative}
-.pcard .l-tag{position:absolute;top:-11px;left:22px;background:var(--accent);color:#fff;font-family:"IBM Plex Mono",monospace;font-size:10px;letter-spacing:.2em;padding:3px 10px}
-.pcard-in{display:flex;gap:24px;flex-wrap:wrap}
-.pcard img{width:104px;height:104px;object-fit:cover;border-radius:50%;border:2px solid var(--ink)}
-.pcard h4{font-family:"Zen Old Mincho",serif;font-size:20px}
-.pcard h4 span{font-family:"Fraunces",serif;font-style:italic;font-size:14px;color:var(--soft);margin-left:8px}
-.p-rows{margin-top:10px;font-size:14px}
-.p-rows div{display:flex;gap:14px;padding:5px 0}
-.p-rows b{font-family:"IBM Plex Mono",monospace;font-weight:500;font-size:10px;letter-spacing:.18em;color:var(--soft);min-width:86px;padding-top:5px}
-.stars{display:inline-flex;gap:3px;align-items:center}
-.stars .ic{width:14px;height:14px;color:var(--accent)}
-.stars .off{color:var(--line)}
+/* ================= ABOUT（ベントグリッド） =================
+   - 角丸: 外側 = 内側 + パディング（20 = 12 + 8）
+   - 余白: 8pxグリッド / 文字色はWCAG AA(4.5:1)以上
+   ============================================================ */
+#about .bento{
+  --surface:#FBF8F3; --surface-2:#EDE4D8; --line:#DFD3C3; --soft:#66574A;
+  --accent:#A9481A; --accent-soft:#F3DECD; --glass:rgba(251,248,243,.72);
+  --shadow-sm:0 1px 2px rgba(42,31,23,.06),0 2px 8px -4px rgba(42,31,23,.10);
+  --shadow-md:0 1px 2px rgba(42,31,23,.06),0 18px 40px -20px rgba(42,31,23,.32);
+  --r-sm:12px; --r-md:20px; --r-pill:999px; --ease:cubic-bezier(.16,1,.3,1);
+  display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:16px
+}
+#about .bento h3{text-wrap:balance}
+#about .cell{position:relative;background:var(--surface);border:1px solid var(--line);border-radius:var(--r-md);padding:24px;box-shadow:var(--shadow-sm);transition:opacity .9s var(--ease),transform .45s var(--ease),box-shadow .45s var(--ease)}
+#about .cell.on:hover{transform:translateY(-3px);box-shadow:var(--shadow-md)}
+#about .cell-h{display:flex;align-items:center;gap:8px;font-size:12px;letter-spacing:.08em;color:var(--soft);margin-bottom:16px;font-weight:500}
+#about .cell-h .ic{width:16px;height:16px;color:var(--accent)}
+#about .ph-chip{position:absolute;left:12px;bottom:12px;display:inline-flex;align-items:center;gap:8px;padding:6px 12px;font-size:11px;border-radius:var(--r-pill);background:var(--glass);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);color:var(--ink)}
+#about .ph-chip .ic{width:14px;height:14px;color:var(--accent)}
+#about .c-profile{grid-column:span 5;grid-row:span 2;padding:8px;display:flex;flex-direction:column}
+#about .c-profile .ph{aspect-ratio:5/4;border-radius:calc(var(--r-md) - 8px);overflow:hidden;position:relative}
+#about .c-profile .ph img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s var(--ease)}
+#about .c-profile:hover .ph img{transform:scale(1.05)}
+#about .pf-body{padding:24px 16px 16px;display:flex;flex-direction:column;gap:20px;flex:1}
+#about .pf-name{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap}
+#about .pf-name h3{font-family:"Zen Old Mincho",serif;font-size:28px;font-weight:900;line-height:1.2}
+#about .pf-name .en{font-style:italic;font-size:21px;color:var(--soft)}
+#about .pf-rows{display:grid;gap:4px}
+#about .pf-rows div{display:grid;grid-template-columns:72px 1fr;gap:12px;font-size:14px;padding:8px 0;border-top:1px dashed var(--line)}
+#about .pf-rows dt{font-size:12px;color:var(--soft)}
+#about .quote{margin-top:auto;padding:20px;border-radius:var(--r-sm);background:var(--surface-2);font-family:"Zen Old Mincho",serif;font-weight:600;font-size:21px;line-height:1.7;position:relative}
+#about .quote::before{content:"“";position:absolute;right:16px;top:-6px;font-family:"Fraunces",serif;font-size:64px;line-height:1;color:var(--accent);opacity:.5}
+#about .quote small{display:block;margin-top:8px;font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.2em;color:var(--soft);font-weight:400}
+#about .c-spec{grid-column:span 7}
+#about .spec{width:100%;border-collapse:collapse}
+#about .spec tr{border-top:1px solid var(--line)}
+#about .spec tr:first-child{border-top:0}
+#about .spec th{width:96px;text-align:left;font-family:"IBM Plex Mono",monospace;font-weight:500;font-size:11px;letter-spacing:.16em;color:var(--soft);padding:12px 12px 12px 0;vertical-align:top}
+#about .spec td{padding:12px 0;font-weight:500;font-size:16px;line-height:1.7}
+#about .spec .now{display:inline-flex;align-items:center;gap:8px}
+#about .spec .now i{width:8px;height:8px;border-radius:50%;background:#3E8E5A;box-shadow:0 0 0 4px rgba(62,142,90,.18)}
+#about .c-likes{grid-column:span 4}
+#about .chips{display:flex;flex-wrap:wrap;gap:8px}
+#about .chip{display:inline-flex;align-items:center;gap:8px;min-height:40px;padding:0 14px;border:1px solid var(--line);border-radius:var(--r-pill);background:var(--bg);font-size:14px;font-weight:500;transition:background .3s,color .3s,border-color .3s,transform .3s var(--ease)}
+#about .chip .ic{width:15px;height:15px;color:var(--accent)}
+#about .chip:hover{background:var(--ink);color:var(--bg);border-color:var(--ink);transform:translateY(-2px)}
+#about .c-meter{grid-column:span 3;display:flex;flex-direction:column}
+#about .meters{display:grid;gap:20px}
+#about .meter-top{display:flex;justify-content:space-between;align-items:baseline;font-size:14px;font-weight:500;margin-bottom:8px}
+#about .meter-top b{font-family:"Fraunces",serif;font-size:21px;font-weight:600}
+#about .meter-top b small{font-size:12px;color:var(--soft);font-weight:400}
+#about .bar{height:10px;border-radius:var(--r-pill);background:var(--surface-2);overflow:hidden}
+#about .bar i{display:block;height:100%;width:0;border-radius:inherit;background:linear-gradient(90deg,#7A4A2A,var(--accent));transition:width 1.4s var(--ease) .3s}
+#about .c-meter.on .bar i{width:var(--v)}
+#about .c-tl{grid-column:span 12}
+#about .tl{list-style:none;display:grid;grid-template-columns:repeat(5,1fr);position:relative;margin-top:8px}
+#about .tl::before{content:"";position:absolute;left:0;right:0;top:11px;height:1.5px;background:var(--line)}
+#about .tl li{position:relative;padding:36px 16px 0 0}
+#about .tl li::before{content:"";position:absolute;left:0;top:4px;width:16px;height:16px;border-radius:50%;background:var(--surface);border:2px solid var(--accent)}
+#about .tl li:last-child::before{background:var(--accent);box-shadow:0 0 0 6px var(--accent-soft)}
+#about .tl .yr{display:block;font-family:"Fraunces",serif;font-size:21px;font-weight:600;color:var(--accent);line-height:1.2;margin-bottom:4px}
+#about .tl .ev{font-size:14px;line-height:1.7}
 
 /* ================= GALLERY / コマ割り ================= */
 .frames{display:grid;grid-template-columns:repeat(12,1fr);gap:20px}
@@ -308,8 +333,11 @@ footer{background:var(--ink);color:var(--bg);margin-top:60px;width:100%}
   .portrait{max-width:430px}
   .polaroid{left:auto;right:-10px}
   .badge{right:auto;left:-18px}
-  .about-grid{grid-template-columns:1fr;gap:48px}
-  .about-left{position:static;display:flex;gap:34px;align-items:center;flex-wrap:wrap}
+  #about .c-profile{grid-column:span 12;grid-row:auto;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:8px}
+  #about .c-profile .ph{aspect-ratio:auto;min-height:100%}
+  #about .c-spec{grid-column:span 12}
+  #about .c-likes{grid-column:span 7}
+  #about .c-meter{grid-column:span 5}
   .f1,.f7{grid-column:span 12}
   .f2,.f3,.f4,.f5,.f6{grid-column:span 6}
   .link-grid{grid-template-columns:1fr}
@@ -324,7 +352,19 @@ footer{background:var(--ink);color:var(--bg);margin-top:60px;width:100%}
   .ft-grid{grid-template-columns:1fr}
   .hero-stat{gap:20px}
   #totop{right:14px;bottom:14px}
-  .tl li{gap:8px}
+  #about .bento{gap:12px}
+  #about .cell{padding:20px}
+  #about .c-profile{display:flex;padding:8px}
+  #about .c-profile .ph{aspect-ratio:5/4;min-height:0}
+  #about .spec th{width:72px}
+  #about .quote{font-size:18px}
+  #about .pf-body{padding:20px 12px 12px}
+  #about .c-likes,#about .c-meter{grid-column:span 12}
+  #about .tl{grid-template-columns:1fr;margin-left:4px}
+  #about .tl::before{left:7px;right:auto;top:8px;bottom:8px;width:1.5px;height:auto}
+  #about .tl li{padding:0 0 20px 36px}
+  #about .tl li:last-child{padding-bottom:0}
+  #about .tl .yr{display:inline;margin-right:12px;font-size:16px}
 }
 @media (prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
@@ -362,6 +402,8 @@ footer{background:var(--ink);color:var(--bg);margin-top:60px;width:100%}
     <symbol id="i-film" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7.5 4v16M16.5 4v16M3 9h2.5M3 15h2.5M18.5 9H21M18.5 15H21"/></symbol>
     <symbol id="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2.5M12 19v2.5M2.5 12H5M19 12h2.5M5 5l1.8 1.8M17.2 17.2 19 19M19 5l-1.8 1.8M6.8 17.2 5 19"/></symbol>
     <symbol id="i-bolt" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"><path d="M13 2 4 14h6l-1 8 9-12h-6l1-8Z"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0c0 5.4-6.5 11-6.5 11Z"/><circle cx="12" cy="10" r="2.3"/></symbol>
+    <symbol id="i-gauge" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 18a8 8 0 1 1 16 0"/><path d="m12 18 4-5"/></symbol>
     <symbol id="i-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></symbol>
     <symbol id="i-rss" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M5 11a8 8 0 0 1 8 8M5 4a15 15 0 0 1 15 15"/><circle cx="6.3" cy="17.7" r="1.4" fill="currentColor" stroke="none"/></symbol>
     <symbol id="i-x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"><path d="M5 4l14 16M19 4 5 20"/></symbol>
@@ -464,60 +506,77 @@ footer{background:var(--ink);color:var(--bg);margin-top:60px;width:100%}
         <h2 class="sec-t lmg"><span class="lm"><span class="lmi">自己紹介</span></span></h2>
         <span class="sec-en mono scr" data-txt="ABOUT ME">ABOUT ME</span>
       </div>
-      <div class="about-grid">
-        <div class="about-left">
-          <figure class="polaroid rv">
-            <img src="/public/img/20260505_120033.jpg" width="460" height="460" alt="鯉のぼり (新潟県)" loading="lazy">
-            <figcaption>鯉のぼり (新潟県)</figcaption>
-          </figure>
-          <blockquote class="quote rv" data-d="150">「リラックスも、<br>趣味のうち。」<small>— 座右の銘</small></blockquote>
-        </div>
-        <div class="about-right">
-          <h3 class="rv"><svg class="ic"><use href="#i-coffee"/></svg>基本データ</h3>
-          <table class="spec rv" data-d="100">
+      <div class="bento">
+        <!-- プロフィール -->
+        <article class="cell c-profile rv">
+          <div class="ph">
+            <img src="/public/img/20260505_120033.jpg" width="460" height="460" alt="青空を泳ぐ鯉のぼり（新潟県）" loading="lazy">
+            <span class="ph-chip mono"><svg class="ic" aria-hidden="true"><use href="#i-pin"/></svg>鯉のぼり — 新潟県</span>
+          </div>
+          <div class="pf-body">
+            <div class="pf-name"><h3>ひしらぎ</h3><span class="en">hisiragi</span></div>
+            <dl class="pf-rows">
+              <div><dt>趣味</dt><dd>風景写真 / ジャズ / ポップ音楽</dd></div>
+              <div><dt>特技</dt><dd>深夜のコーディング</dd></div>
+              <div><dt>弱点</dt><dd>新しいフォントに目がない</dd></div>
+            </dl>
+            <blockquote class="quote">リラックスも、趣味のうち。<small>— 座右の銘</small></blockquote>
+          </div>
+        </article>
+
+        <!-- 基本データ -->
+        <section class="cell c-spec rv" data-d="80" aria-labelledby="specT">
+          <h3 class="cell-h mono" id="specT"><svg class="ic" aria-hidden="true"><use href="#i-coffee"/></svg>基本データ</h3>
+          <table class="spec">
             <tbody>
               <tr><th>NAME</th><td>hisiragi / ひしらぎ</td></tr>
               <tr><th>WORK</th><td>Web制作 / デザイン / 動画編集</td></tr>
               <tr><th>BASE</th><td>日本の東京</td></tr>
               <tr><th>BEANS</th><td>カフェオレ、気分でホットコーヒー</td></tr>
-              <tr><th>NOW</th><td>大規模プロジェクトを2つ始動中</td></tr>
+              <tr><th>NOW</th><td><span class="now"><i aria-hidden="true"></i>大規模プロジェクトを2つ始動中</span></td></tr>
             </tbody>
           </table>
-          <h3 class="rv"><svg class="ic"><use href="#i-kiwi"/></svg>すきなもの</h3>
-          <div class="chips rv" data-d="100">
-            <span class="chip"><svg class="ic"><use href="#i-cam"/></svg>風景写真</span>
-            <span class="chip"><svg class="ic"><use href="#i-music"/></svg>ジャズ</span>
-            <span class="chip"><svg class="ic"><use href="#i-star"/></svg>ポップ音楽</span>
-            <span class="chip"><svg class="ic"><use href="#i-bolt"/></svg>コーディング</span>
-            <span class="chip"><svg class="ic"><use href="#i-book"/></svg>デザイン</span>
-            <span class="chip"><svg class="ic"><use href="#i-film"/></svg>動画編集</span>
+        </section>
+
+        <!-- すきなもの -->
+        <section class="cell c-likes rv" data-d="120" aria-labelledby="likesT">
+          <h3 class="cell-h mono" id="likesT"><svg class="ic" aria-hidden="true"><use href="#i-kiwi"/></svg>すきなもの</h3>
+          <div class="chips">
+            <span class="chip"><svg class="ic" aria-hidden="true"><use href="#i-cam"/></svg>風景写真</span>
+            <span class="chip"><svg class="ic" aria-hidden="true"><use href="#i-music"/></svg>ジャズ</span>
+            <span class="chip"><svg class="ic" aria-hidden="true"><use href="#i-star"/></svg>ポップ音楽</span>
+            <span class="chip"><svg class="ic" aria-hidden="true"><use href="#i-bolt"/></svg>コーディング</span>
+            <span class="chip"><svg class="ic" aria-hidden="true"><use href="#i-book"/></svg>デザイン</span>
+            <span class="chip"><svg class="ic" aria-hidden="true"><use href="#i-film"/></svg>動画編集</span>
           </div>
-          <h3 class="rv"><svg class="ic"><use href="#i-clock"/></svg>これまでのこと</h3>
-          <ul class="tl rv" data-d="100">
-            <li><span class="yr">2022</span><span>Twitter(現:X)に登録</span></li>
-            <li><span class="yr">2024</span><span>Discordコミュニティを運営</span></li>
-            <li><span class="yr">2025</span><span>ポイ活コミュニティ、金策鯖の運営を開始</span></li>
-            <li><span class="yr">2025</span><span>風景写真をはじめる</span></li>
-            <li><span class="yr">2026</span><span>ホームページを新しく</span></li>
-          </ul>
-          <!-- プロフィールカード -->
-          <div class="pcard rv" data-d="150">
-            <span class="l-tag">PROFILE / 自己紹介カード</span>
-            <div class="pcard-in">
-              <img src="/public/img/20260505_120251.jpg" width="240" height="240" alt="山と新緑の風景" loading="lazy">
-              <div>
-                <h4>ひしらぎ <span class="en">HISIRAGI</span></h4>
-                <div class="p-rows">
-                  <div><b>趣味</b><span>風景写真 / ジャズ / ポップ音楽</span></div>
-                  <div><b>特技</b><span>深夜のコーディング</span></div>
-                  <div><b>弱点</b><span>新しいフォントに目がない</span></div>
-                  <div><b>コーヒー依存度</b><span class="stars"><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star-o"/></svg><svg class="ic"><use href="#i-star-o"/></svg></span></div>
-                  <div><b>やる気の曲線</b><span class="stars"><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg><svg class="ic off"><use href="#i-star-o"/></svg></span></div>
-                </div>
-              </div>
+        </section>
+
+        <!-- メーター -->
+        <section class="cell c-meter rv" data-d="160" aria-labelledby="meterT">
+          <h3 class="cell-h mono" id="meterT"><svg class="ic" aria-hidden="true"><use href="#i-gauge"/></svg>ステータス</h3>
+          <div class="meters">
+            <div>
+              <div class="meter-top"><span>コーヒー依存度</span><b>3<small>/5</small></b></div>
+              <div class="bar" role="meter" aria-label="コーヒー依存度" aria-valuemin="0" aria-valuemax="5" aria-valuenow="3"><i style="--v:60%"></i></div>
+            </div>
+            <div>
+              <div class="meter-top"><span>やる気の曲線</span><b>4<small>/5</small></b></div>
+              <div class="bar" role="meter" aria-label="やる気の曲線" aria-valuemin="0" aria-valuemax="5" aria-valuenow="4"><i style="--v:80%"></i></div>
             </div>
           </div>
-        </div>
+        </section>
+
+        <!-- これまでのこと -->
+        <section class="cell c-tl rv" data-d="100" aria-labelledby="tlT">
+          <h3 class="cell-h mono" id="tlT"><svg class="ic" aria-hidden="true"><use href="#i-clock"/></svg>これまでのこと</h3>
+          <ol class="tl">
+            <li><span class="yr">2022</span><span class="ev">Twitter(現:X)に登録</span></li>
+            <li><span class="yr">2024</span><span class="ev">Discordコミュニティを運営</span></li>
+            <li><span class="yr">2025</span><span class="ev">ポイ活コミュニティ、金策鯖の運営を開始</span></li>
+            <li><span class="yr">2025</span><span class="ev">風景写真をはじめる</span></li>
+            <li><span class="yr">2026</span><span class="ev">ホームページを新しく</span></li>
+          </ol>
+        </section>
       </div>
     </div>
   </section>
